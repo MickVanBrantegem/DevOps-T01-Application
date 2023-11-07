@@ -7,7 +7,7 @@ pipeline {
             steps {
                 
                 echo "Building.."
-                sh "sudo docker compose build"
+                sh "docker compose build"
                 }
             }
 	
@@ -15,20 +15,20 @@ pipeline {
             steps {
                 echo "Testing.."
                 sh '''
-                sudo dotnet restore src/Server/Server.csproj
+                dotnet restore src/Server/Server.csproj
                 '''
             }
         }
         stage('Container Down') {
             steps {
                 echo 'Docker container down'
-                sh "sudo docker compose down"
+                sh "docker compose down"
             }
         }
         stage('Container Up') {
             steps {
                 echo 'Docker container up'
-                sh "sudo docker compose up -d"
+                sh "docker compose up -d"
             }
         }
     }
