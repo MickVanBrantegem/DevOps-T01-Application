@@ -14,8 +14,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo "Testing.."
-                 
-                sh dotnet restore src/Server/Server.csproj
+                sh "dotnet restore src/Server/Server.csproj"
                 
             }
         }
