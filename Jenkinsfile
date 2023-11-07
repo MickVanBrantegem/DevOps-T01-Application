@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'Admin', usernameVariable: 'Admin', passwordVariable: 'Admin')]) {
+                withCredentials([usernamePassword(credentialsId: 'Admin', usernameVariable: 'Jenkins', passwordVariable: '')]) {
                 echo "Building.."
                 sh "sudo docker-compose build"
                 }
