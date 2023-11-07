@@ -7,7 +7,7 @@ pipeline {
             steps {
                 
                 echo "Building.."
-                sh "sudo docker-compose build"
+                sh "docker-compose build"
                 }
             }
 	
@@ -15,7 +15,7 @@ pipeline {
             steps {
                 echo "Testing.."
                 sh '''
-                sudo dotnet restore src/Server/Server.csproj
+                dotnet restore src/Server/Server.csproj
                 '''
             }
         }
