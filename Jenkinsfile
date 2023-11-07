@@ -22,13 +22,13 @@ pipeline {
         stage('Container Down') {
             steps {
                 echo 'Docker container down'
-                sh "sudo docker-compose down"
+                sh "sudo docker compose down"
             }
         }
         stage('Container Up') {
             steps {
                 echo 'Docker container up'
-                sh "sudo docker-compose up -d"
+                sh "sudo docker compose up -d"
             }
         }
     }
