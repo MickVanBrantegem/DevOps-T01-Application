@@ -1,8 +1,13 @@
 pipeline {
-    agent any 
+    agent any
+
+    environment {
+	    DOCKER_CREDENTIALS = credentials('YourDockerCredentialsId')
+	}
     stages {
         stage('Build') {
             steps {
+                withCredentials([usernamePassword(credentialsId: 'YourDockerCredentialsId', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                 echo "Building.."
                 sh "sudo docker-compose build"
                 
