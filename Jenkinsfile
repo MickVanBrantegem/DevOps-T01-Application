@@ -21,7 +21,7 @@ pipeline {
                 echo 'Docker container down'
                 sh "sudo docker-compose down"
             }
-
+        }
         stage('Container Up') {
             steps {
                 echo 'Docker container up'
@@ -29,5 +29,4 @@ pipeline {
             }
         }
     }
-}
 }
