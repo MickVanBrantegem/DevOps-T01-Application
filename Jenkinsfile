@@ -3,16 +3,16 @@ pipeline {
 
     environment {
 	    DOCKER_CREDENTIALS = credentials('YourDockerCredentialsId')
-	}
+    }
     stages {
         stage('Build') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'YourDockerCredentialsId', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                 echo "Building.."
                 sh "sudo docker-compose build"
-                
+                }
             }
-        }
+	}
         stage('Test') {
             steps {
                 echo "Testing.."
