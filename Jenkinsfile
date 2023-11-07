@@ -1,18 +1,18 @@
 pipeline {
     agent any
 
-    environment {
-	    DOCKER_CREDENTIALS = credentials('Admin')
-    }
+    "environment {"
+	    "DOCKER_CREDENTIALS = credentials('Admin')"
+    "}"
     stages {
         stage('Build') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'Admin', usernameVariable: 'Jenkins', passwordVariable: '')]) {
+                "withCredentials([usernamePassword(credentialsId: 'Admin', usernameVariable: 'Jenkins', passwordVariable: '')]) {"
                 echo "Building.."
                 sh "sudo docker-compose build"
                 }
             }
-	}
+	"}"
         stage('Test') {
             steps {
                 echo "Testing.."
