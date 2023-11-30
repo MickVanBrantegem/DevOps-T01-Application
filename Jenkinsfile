@@ -24,13 +24,13 @@ pipeline {
                 sh "docker compose down"
             }
         }
-        stage('Remove Containers') {
-            steps {
-                echo 'Remove Containers'
-                sh "docker rm -f db"
-		sh "docker rm -f web"
-            }
-        }
+        #stage('Remove Containers') {
+            #steps {
+                #echo 'Remove Containers'
+                #sh "docker rm -f db"
+		#sh "docker rm -f web"
+            #}
+        #}
         stage('Container Up') {
             steps {
                 echo 'Docker container up'
