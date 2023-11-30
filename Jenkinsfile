@@ -18,17 +18,6 @@ pipeline {
                 
             }
         }
-        stage('Container Down') {
-            steps {
-                echo 'Docker container down'
-                sh "docker compose down"
-            }
-        }
-        stage('Container Up') {
-            steps {
-                echo 'Docker container up'
-                sh "docker compose up -d"
-            }
-        }
+
     }
 }
